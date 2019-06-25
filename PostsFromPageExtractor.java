@@ -10,23 +10,23 @@ import facebook4j.auth.AccessToken;
 
 public class PostsFromPageExtractor {
 
-
+/*
 
 A simple Facebook4J client which
 illustrates how to access group feeds / posts / comments.
 @param args
 @throws FacebookException 
-/
+*/
 public static void main(String[] args) throws FacebookException {
 
  // Generate facebook instance.
 Facebook facebook = new FacebookFactory().getInstance();
 // Use default values for oauth app id.
-facebook.setOAuthAppId("XXXXXXX", "XXXXXXXX");
+facebook.setOAuthAppId("XXXXXXX", "XXXXXXXXXX");
 // Get an access token from: 
 // https://developers.facebook.com/tools/explorer
 // Copy and paste it below.
-String accessTokenString = "XXXXXXXXX";
+String accessTokenString ="XXXXXXXXXX";
 AccessToken at = new AccessToken(accessTokenString);
 // Set access token.
 facebook.setOAuthAccessToken(at);
@@ -38,8 +38,10 @@ facebook.setOAuthAccessToken(at);
 
  // Set limit to 25 feeds.
 
- ResponseList< Post > feeds = facebook.getFeed("XXXXXXXXXX",
+ResponseList< Post > feeds = facebook.getFeed("XXXXXXXXX",
 new Reading().limit(25));
+
+
 
  // For all 25 feeds...
 for (int i = 0; i < feeds.size(); i++) {
